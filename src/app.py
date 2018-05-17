@@ -1,6 +1,5 @@
 """This is a demo of using python, redis, and docker"""
 import redis
-from time import sleep
 
 
 def main():
@@ -15,9 +14,7 @@ def main():
 
     # The decode is because redis returns bytes and I want a utf-8 string.
     hopefully_doodle = r.get('cheese').decode('utf-8')
-
-    print("They value for the key cheese is {}".format(hopefully_doodle))
-    sleep(1)
+    print("The value for the key cheese is {}".format(hopefully_doodle))
 
 if __name__ == '__main__':
     main()
